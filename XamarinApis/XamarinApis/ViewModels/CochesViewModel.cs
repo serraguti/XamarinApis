@@ -16,6 +16,10 @@ namespace XamarinApis.ViewModels
         public CochesViewModel()
         {
             this.ServiceCoches = new ServiceCoches();
+            Task.Run(async () =>
+            {
+                await this.LoadCarsAsync();
+            });
         }
 
         public Command MostrarCoches

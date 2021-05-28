@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinApis.Views;
 
 namespace XamarinApis
 {
@@ -10,7 +11,7 @@ namespace XamarinApis
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new CochesView();
         }
 
         protected override void OnStart()
