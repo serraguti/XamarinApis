@@ -54,10 +54,10 @@ namespace XamarinApis.ViewModels
                     //CREAMOS EL VIEWMODEL
                     DoctorDetallesViewModel viewmodel =
                     new DoctorDetallesViewModel();
-                    viewmodel.Doctor = doctor as Doctor;
                     //CREAMOS LA VISTA
                     DoctorDetallesView view = new DoctorDetallesView();
                     view.BindingContext = viewmodel;
+                    viewmodel.Doctor = doctor as Doctor;
                     Application.Current.MainPage.Navigation.PushModalAsync
                     (view);
                 });

@@ -8,12 +8,15 @@
                    FontSize="30" TextColor="Red"
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" />
-            <Label Text="{Binding Apellido}"
+            <Label Text="{Binding Doctor.Apellido}"
                    TextColor="Blue" FontSize="25"/>
-            <Label Text="{Binding Especialidad}"
+            <Label Text="{Binding Doctor.Especialidad}"
                    TextColor="Blue" FontSize="25"/>
-            <Label Text="{Binding Salario}"
+            <Label Text="{Binding Doctor.Salario}"
                    TextColor="Red" FontSize="25"/>
+            <Button Text="Eliminar"
+                    TextColor="Red"
+                    Command="{Binding EliminarDoctor}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
