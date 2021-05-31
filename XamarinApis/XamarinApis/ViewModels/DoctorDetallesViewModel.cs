@@ -44,5 +44,20 @@ namespace XamarinApis.ViewModels
                 });
             }
         }
+
+        public Command MarcarFavorito
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    SessionService session =
+                    App.ServiceLocator.SessionService;
+                    session.Favoritos.Add(this.Doctor);
+                    await Application.Current.MainPage.DisplayAlert
+                    ("Alert", "Doctor almacenado", "OK");
+                });
+            }
+        }
     }
 }

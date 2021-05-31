@@ -67,5 +67,33 @@ namespace XamarinApis.ViewModels
                 });
             }
         }
+
+        public Command MarcarFavorito
+        {
+            get
+            {
+                return new Command(async (doctor) =>
+                {
+                    SessionService session =
+                    App.ServiceLocator.SessionService;
+                    session.Favoritos.Add(doctor as Doctor);
+                    await Application.Current.MainPage.DisplayAlert("Alert"
+                        , "Doctor almacenado", "OK");
+                });
+            }
+        }
+
+        public Command MostrarFavoritos
+        {
+            get
+            {
+                return new Command(async() =>
+                {
+                    DoctoresFavoritosView view =
+                    new DoctoresFavoritosView();
+await Application.Current.MainPage.Navigation.PushModalAsync(view);
+                });
+            }
+        }
     }
 }

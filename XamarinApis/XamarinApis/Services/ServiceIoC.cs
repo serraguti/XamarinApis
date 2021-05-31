@@ -23,9 +23,28 @@ namespace XamarinApis.Services
             //VIEWMODELS
             builder.RegisterType<DoctoresViewModel>();
             builder.RegisterType<DoctorDetallesViewModel>();
+            builder.RegisterType<DoctoresFavoritosViewModel>();
             //SERVICIO API
             builder.RegisterType<ServiceDoctores>();
+            //ELEMENTOS DE SESSION
+            builder.RegisterType<SessionService>().SingleInstance();
             this.container = builder.Build();
+        }
+
+        public DoctoresFavoritosViewModel DoctoresFavoritosViewModel
+        {
+            get
+            {
+                return this.container.Resolve<DoctoresFavoritosViewModel>();
+            }
+        }
+
+        public SessionService SessionService
+        {
+            get
+            {
+                return this.container.Resolve<SessionService>();
+            }
         }
 
         //NECESITAMOS PROPIEDADES PARA PODER HACER LOS BINDING

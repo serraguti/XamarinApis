@@ -12,6 +12,8 @@ BindingContext="{Binding Source={x:Static local:App.ServiceLocator}
                    FontSize="40" TextColor="Red"
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" />
+            <Button Text="Mostrar favoritos"
+                    Command="{Binding MostrarFavoritos}"/>
             <ListView ItemsSource="{Binding Doctores}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -25,6 +27,10 @@ CommandParameter="{Binding .}"
                                         Text="Detalles"
 Command="{Binding BindingContext.DetallesDoctor
 , Source={x:Reference stackdoctores}}"/>
+                                <Button Text="Favorito" TextColor="Blue"
+        CommandParameter="{Binding .}"
+        Command="{Binding BindingContext.MarcarFavorito
+    , Source={x:Reference stackdoctores}}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
