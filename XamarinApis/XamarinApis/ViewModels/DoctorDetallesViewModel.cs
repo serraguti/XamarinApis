@@ -12,9 +12,9 @@ namespace XamarinApis.ViewModels
     {
         ServiceDoctores ServiceDoctores;
 
-        public DoctorDetallesViewModel()
+        public DoctorDetallesViewModel(ServiceDoctores servicedoctores)
         {
-            this.ServiceDoctores = new ServiceDoctores();
+            this.ServiceDoctores = servicedoctores;
         }
 
         private Doctor _Doctor;

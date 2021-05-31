@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinApis.Views.DoctoresView"
-             xmlns:viewmodels="clr-namespace:XamarinApis.ViewModels">
+             xmlns:viewmodels="clr-namespace:XamarinApis.ViewModels"
+             xmlns:local="clr-namespace:XamarinApis">
     <ContentPage.Content>
-        <StackLayout x:Name="stackdoctores">
-            <StackLayout.BindingContext>
-                <viewmodels:DoctoresViewModel/>
-            </StackLayout.BindingContext>
+        <StackLayout x:Name="stackdoctores"
+BindingContext="{Binding Source={x:Static local:App.ServiceLocator}
+            , Path=DoctoresViewModel}">
             <Label Text="Doctores"
                    FontSize="40" TextColor="Red"
                 VerticalOptions="Start" 

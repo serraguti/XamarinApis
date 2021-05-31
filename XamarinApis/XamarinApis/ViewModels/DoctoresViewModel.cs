@@ -15,9 +15,9 @@ namespace XamarinApis.ViewModels
     {
         ServiceDoctores ServiceDoctores;
 
-        public DoctoresViewModel()
+        public DoctoresViewModel(ServiceDoctores servicedoctores)
         {
-            this.ServiceDoctores = new ServiceDoctores();
+            this.ServiceDoctores = servicedoctores;
             Task.Run(async () =>
             {
                 await this.CargarDoctoresAsync();
@@ -53,7 +53,7 @@ namespace XamarinApis.ViewModels
                     //OTRA VISTA/VIEWMODEL
                     //CREAMOS EL VIEWMODEL
                     DoctorDetallesViewModel viewmodel =
-                    new DoctorDetallesViewModel();
+                    App.ServiceLocator.DoctorDetallesViewModel;
                     //CREAMOS LA VISTA
                     DoctorDetallesView view = new DoctorDetallesView();
                     view.BindingContext = viewmodel;
