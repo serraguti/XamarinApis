@@ -22,6 +22,10 @@ namespace XamarinApis.ViewModels
             {
                 await this.CargarDoctoresAsync();
             });
+            MessagingCenter.Subscribe<DoctoresViewModel>
+                (this, "REFRESH", async(sender) => {
+                    await this.CargarDoctoresAsync();
+                });
         }
 
         private ObservableCollection<Doctor> _Doctores;

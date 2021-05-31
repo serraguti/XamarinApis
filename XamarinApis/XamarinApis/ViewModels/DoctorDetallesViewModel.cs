@@ -35,6 +35,10 @@ namespace XamarinApis.ViewModels
                 return new Command(async() =>
                 {
                     await this.ServiceDoctores.DeleteDoctorAsync(Doctor.IdDoctor);
+                    MessagingCenter.Send(App.ServiceLocator.DoctoresViewModel
+                        , "REFRESH");
+                    await Application.Current.MainPage.DisplayAlert("Alert"
+                        , "Doctor " + Doctor.Apellido + " eliminado", "OK");
                     await Application.Current.MainPage.Navigation
                                         .PopModalAsync();
                 });
