@@ -11,7 +11,7 @@ namespace XamarinApis
         {
             InitializeComponent();
 
-            MainPage = new CochesView();
+            MainPage = new DoctoresView();
         }
 
         protected override void OnStart()
