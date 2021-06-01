@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.SharedTransitions;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinApis.Services;
@@ -22,7 +23,7 @@ namespace XamarinApis
         {
             InitializeComponent();
 
-            MainPage = new MainDoctoresView();
+            MainPage = new SharedTransitionNavigationPage(new CochesCollectionView());
         }
 
         protected override void OnStart()

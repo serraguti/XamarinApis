@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinApis.Views.CocheDetailsView"
+             xmlns:sharedtransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+             xmlns:viewmodels="clr-namespace:XamarinApis.ViewModels">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label TextColor="PaleVioletRed"
+                                   Text="{Binding Coche.Marca}"
+                                   FontSize="Large"/>
+            <Label TextColor="Red"
+                                   Text="{Binding Coche.Modelo}"
+                                   FontSize="Large"/>
+            <Label Text="{Binding Coche.Conductor}"
+                                   FontSize="Medium" TextColor="Fuchsia"/>
+            <Image Source="{Binding Coche.Imagen}"
+                                   HeightRequest="400"
+                   sharedtransitions:Transition.Name="cocheImagen"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
