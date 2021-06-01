@@ -22,7 +22,7 @@ namespace XamarinApis
         {
             InitializeComponent();
 
-            MainPage = new DoctoresView();
+            MainPage = new MainDoctoresView();
         }
 
         protected override void OnStart()
