@@ -24,11 +24,20 @@ namespace XamarinApis.Services
             builder.RegisterType<DoctoresViewModel>();
             builder.RegisterType<DoctorDetallesViewModel>();
             builder.RegisterType<DoctoresFavoritosViewModel>();
+            builder.RegisterType<DoctorViewModel>();
             //SERVICIO API
             builder.RegisterType<ServiceDoctores>();
             //ELEMENTOS DE SESSION
             builder.RegisterType<SessionService>().SingleInstance();
             this.container = builder.Build();
+        }
+
+        public DoctorViewModel DoctorViewModel
+        {
+            get
+            {
+                return this.container.Resolve<DoctorViewModel>();
+            }
         }
 
         public DoctoresFavoritosViewModel DoctoresFavoritosViewModel

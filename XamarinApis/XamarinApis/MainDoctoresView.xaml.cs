@@ -38,6 +38,15 @@ namespace XamarinApis
                     Icono = "clone.png"
                 };
             menu.Add(favoritosView);
+            MasterPageItem insertarView =
+                new MasterPageItem
+                {
+                    Titulo = "Nuevo doctor"
+                ,
+                    Tipo = typeof(InsertarDoctorView),
+                    Icono = "otro.png"
+                };
+            menu.Add(insertarView);
             this.listviewMenu.ItemsSource = menu;
             //PONEMOS UNA PAGINA COMO PRESENTACION
             Detail =

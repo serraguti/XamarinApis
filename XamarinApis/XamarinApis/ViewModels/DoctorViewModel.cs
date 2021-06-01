@@ -15,6 +15,7 @@ namespace XamarinApis.ViewModels
         public DoctorViewModel(ServiceDoctores serviceDoctores)
         {
             this.ServiceDoctores = serviceDoctores;
+            this.Doctor = new Doctor();
         }
 
         private Doctor _Doctor;

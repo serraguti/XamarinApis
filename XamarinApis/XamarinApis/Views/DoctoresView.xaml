@@ -18,10 +18,28 @@ BindingContext="{Binding Source={x:Static local:App.ServiceLocator}
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Marcar favorito"
+        CommandParameter="{Binding .}"
+        Command="{Binding BindingContext.MarcarFavorito
+    , Source={x:Reference stackdoctores}}"/>
+                                <MenuItem Text="Ver detalles"
+                                        CommandParameter="{Binding .}"
+                                        Command="{Binding BindingContext.DetallesDoctor
+                                        , Source={x:Reference stackdoctores}}"/>                                          
+                            </ViewCell.ContextActions>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="{Binding Apellido}"
                                        FontSize="20"
                                        TextColor="Blue"/>
+                                <Image Source="sable2.png">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                        CommandParameter="{Binding .}"
+                                        Command="{Binding BindingContext.DetallesDoctor
+                                        , Source={x:Reference stackdoctores}}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>                                
                                 <Button HorizontalOptions="End"
 CommandParameter="{Binding .}"
                                         Text="Detalles"
